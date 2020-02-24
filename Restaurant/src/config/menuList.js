@@ -1,0 +1,77 @@
+export menuList=[{
+	title:"前台管理",
+	path:"/reception",
+	icon:"",
+	children:[
+		{
+			title:"订餐管理",
+			path:"/reception/order",
+			icon:""
+		},
+		{
+			title:"餐桌管理",
+			path:"/reception/table",
+			icon""
+		}
+	]
+},
+{
+	title:"菜单管理",
+	path:"/menu",
+	icon:""
+	children:[
+		{
+			title:"菜品管理",
+			path:"/menu/dishes",
+			icon:""
+		},
+		{
+			title:"菜品推荐管理",
+			path:"/menu/recommend",
+			icon:""
+		}
+	]
+},
+{
+	title:"人事管理",
+	path:"/person",
+	icon:""
+},
+{
+	title:"物资库存管理",
+	path:"/stock",
+	icon:"",
+	children:[
+		{
+			title:"库存管理",
+			path:"/stock/resources",
+			icon:""
+		},
+		{
+			title:"入/出库信息管理",
+			path:"/stock/message",
+			icon:""
+		}
+	]
+},{
+	title:"入账管理",
+	path:"/cash",
+	icon:"",
+	children:[
+		{
+			title:"柱状图",
+			path:"/cash/bar",
+			icon:""
+		},
+		{
+			title:"饼状图",
+			path:"/cash/cake",
+			icon:""
+		},
+		{
+			title:"折线图",
+			path:"/cash/line",
+			icon:""
+		},
+	]
+}]
