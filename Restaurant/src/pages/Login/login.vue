@@ -13,7 +13,7 @@
 		<form action="" class="animated bounceInDown login-form">
 			<h2 class="animated bounceInLeft">登录</h2>
 			<input type="text" name="username" placeholder="用户名" v-model="username" class="animated bounceInLeft">
-			<input type="text" name="password" placeholder="密码" v-model="password" class="animated bounceInRight">
+			<input type="password" name="password" placeholder="密码" v-model="password" class="animated bounceInRight">
 			<select class="select animated bounceInLeft" @change="changeProduct($event)">
 			  <option value ="0">请选择</option>
 			  <option v-for="(item,index) in productList" :key="index" :value="item.id">{{item.title}}</option>

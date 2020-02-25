@@ -40,7 +40,7 @@ const selectOrder = async function() {
 	let date = new Date();
 	let ordyear = (date.getFullYear()).toString();
 	// console.log(ordyear);
-	let sql = `SELECT * FROM ord WHERE ordyear = '${ordyear}'`;
+	let sql = `SELECT * FROM ord WHERE ordyear = '${ordyear}' ORDER BY ID desc`;
 	let res = await query.query(sql);
 	res = JSON.parse(JSON.stringify(res));
 	return res;
@@ -115,7 +115,7 @@ const deleteTable = async function(values) {
 	let sql = `DELETE FROM tables WHERE tablenum=${tablenum}`;
 	let res = await query.query(sql);
 	res = JSON.parse(JSON.stringify(res));
-	console.log(res);
+	// console.log(res);
 	return res;
 }
 //修改座位状态
@@ -125,7 +125,7 @@ const updateTable = async function(values) {
 	let sql = `UPDATE tables SET state='${state}' WHERE tablenum='${tablenum}'`;
 	let res = await query.query(sql);
 	res = JSON.parse(JSON.stringify(res));
-	console.log(res);
+	// console.log(res);
 	return res;
 }
 //添加员工信息

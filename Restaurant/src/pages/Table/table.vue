@@ -107,7 +107,7 @@
 				if(res.code===1){
 					this.$message({
 						message:`${state}状态修改成功`,
-						tye:'success'
+						type:'success'
 					})
 				}else{
 					this.$message({
