@@ -55,11 +55,9 @@
 	  </el-aside>
 	  <el-container>
 	    <el-header>餐厅管理系统
-			<div class="triangle"></div>
-			<span class="user">用户：{{this.username}}</span>
+			<span class="user el-icon-user-solid" style="line-height: 80px; margin-right: 30px;">&nbsp;：{{this.username}}</span>
 		</el-header>
 	    <el-main>
-			<div class="triangle"></div>
 			<div class="main">
 				<router-view></router-view>
 			</div>
@@ -82,7 +80,7 @@
 			}
 		},
 		computed:{
-			
+
 		},
 		mounted:function(){
 			this.changePower();
@@ -127,7 +125,7 @@
     background-color: white;
     color: Navy;
     text-align: center;
-    line-height: 80px;
+    line-height: 70px;
 	font-weight: 800;
 	font-size: 30px;
 	position: relative;
@@ -152,18 +150,19 @@
 	  top: 75px
   }
   .el-footer {
-      background-color: #B3C0D1;
+      background-color: white;
       color: #333;
       text-align: center;
       line-height: 60px;
 	  font-size: 16px;
     }
-  
+
   .el-aside {
     background-color: #001529;
     color: #A6ADB4;
     text-align: center;
     line-height: 200px;
+    overflow: hidden;
   }
   .el-aside .aside-title{
 	  line-height: 100px;
@@ -175,35 +174,35 @@
   }
   .el-row{
 	  width: 202px;
-  } 
+  }
   .el-row h2{
 	  line-height: 10px;
 	  margin: 0;
   }
-  
+
   .el-main {
-    background-color: rgba(220,220,220,0.8);
+    background-color: #F0F2F5;
     color: #333;
     text-align: center;
     height: 800px;
-	margin: 20px;
+    margin: 0px;
   }
   .el-main .main{
 	  width: 100%;
 	  height: 100%;
 	  background-color: white;
   }
-  
-  
+
+
   body > .el-container {
     margin-bottom: 40px;
   }
-  
+
   .el-container:nth-child(5) .el-aside,
   .el-container:nth-child(6) .el-aside {
     line-height: 260px;
   }
-  
+
   .el-container:nth-child(7) .el-aside {
     line-height: 320px;
   }

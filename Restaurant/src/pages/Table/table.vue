@@ -3,28 +3,13 @@
 <template>
 	<div class="table-main">
 		<div class="table-operate">
-			<div class="add-table animated rollIn">
-				<el-popover
-				  placement="top"
-				  width="180"
-				  v-model="visible">
-				  <input type="text" name="num" class="addinput" placeholder="请输入号码" v-model="num"><br><br />
-				  <div style="text-align: center; margin: 0">
-					<el-button type="text" size="mini" @click="addTable">确定</el-button>
-				  </div>
-				  <el-button slot="reference" class="addtable">添加餐桌</el-button>
-				</el-popover>
-			</div>
-			<div class="delete-table animated rollIn"><el-popover
-				  placement="top"
-				  width="180"
-				  v-model="visible">
-				  <input type="text" name="num" placeholder="请输入号码" class="" v-model="deletenum"><br><br />
-				  <div style="text-align: center; margin: 0">
-					<el-button type="text" size="mini" @click="deleteTable">确定</el-button>
-				  </div>
-				  <el-button slot="reference" class="deletetable">删除餐桌</el-button>
-				</el-popover></div>
+			<div class="operate-input">
+        <input type="text" placeholder="餐桌号" v-model="num">
+      </div>
+      <div class="add-delete">
+        <button class="add el-icon-circle-plus" @click="addTable">&nbsp;添加餐桌</button>
+        <button class="delete el-icon-error" @click="deleteTable">&nbsp;删除餐桌</button>
+      </div>
 		</div>
 		<ul class="table-menu">
 			<div class="el-icon-warning-outline" title="白色:空闲状态
@@ -41,8 +26,7 @@
 		data(){
 			return {
 				tableList:[],
-				num:'',
-				deletenum:''
+				num:''
 			}
 		}
 		,
@@ -72,7 +56,7 @@
 			},
 			//删除餐桌
 			async deleteTable(){
-				let num=this.deletenum;
+				let num=this.num;
 				let values={num:num};
 				let res=await ajax('http://localhost:3000/api/deletetable',values)
 				if(res.code===1){
@@ -141,92 +125,78 @@
 	.table-main{
 		width: 100%;
 		height: 100%;
+    background-color: #F0F2F5;
+    overflow: hidden;
 	}
 	.table-operate{
-		width: 100%;
-		height: 100px;
+		width: 44%;
+		height: 100%;
 		padding-bottom:20px ;
+    float: left;
 	}
-	.add-table{
-		width: 45%;
-		height: 100%;
-		background-color: #001529;
-		color: white;
-		font-size: 30px;
-		outline: none;
-		float: left;
-		margin-left: 20px;
-		border-radius: 10px;
-		margin-top: 10px;
-		transition: all 0.5s;
-		font-family: "agency fb";
-		line-height: 100px;
-		cursor: pointer;
-	}
-	.add-table .el-popover .addinput:placeholder{
-		color: #B3C0D1
-		}
-	.add-table .addtable{
-		width: 100%;
-		height: 100%;
-		background-color: #001529;
-		color: white;
-		font-size: 30px;
-		outline: none;
-		border-radius: 10px;
-		transition: all 0.5s;
-		font-family: "agency fb";
-		line-height: 70px;
-		cursor: pointer;
-	}
-	.add-table .addtable:hover{
-		color: #001529;
-		background-color: orange;
-		}
-	.delete-table{
-		width: 45%;
-		height: 100%;
-		background-color: #001529;
-		color: white;
-		font-size: 30px;
-		outline: none;
-		float: right;
-		margin-right: 20px;
-		border-radius: 10px;
-		margin-top: 10px;
-		transition: all 0.5;
-		transition: all 0.5s;
-		font-family: "agency fb";
-		line-height: 100px;
-		cursor: pointer;
-	}
-	.delete-table .deletetable{
-		width: 100%;
-		height: 100%;
-		background-color: #001529;
-		color: white;
-		font-size: 30px;
-		outline: none;
-		border-radius: 10px;
-		transition: all 0.5s;
-		font-family: "agency fb";
-		line-height: 70px;
-		cursor: pointer;
-	}
-	.delete-table .deletetable:hover{
-		color: #001529;
-		background-color: orange;
-		}
+  .operate-input{
+    width: 500px;
+    height: 350px;
+    background-color: white;
+    margin: 0 auto;
+    box-shadow: 0 0 5px deepskyblue;
+    border-radius: 10px;
+  }
+  .operate-input input{
+    display: block;
+    outline: none;
+    width: 50%;
+    height: 80%;
+    margin: auto auto;
+    font-size: 70px;
+    font-weight: bolder;
+    border: none;
+    text-shadow: 0 0 10px #001529;
+    color: #001529;
+  }
+  .add-delete{
+    width: 500px;
+    height: 350px;
+    background-color: white;
+    margin: 20px auto;
+    box-shadow: 0 0 7px deepskyblue;
+    border-radius: 5px;
+    padding-top: 20px;
+  }
+  .add,.delete{
+    display: block;
+    width: 340px;
+    height: 130px;
+    background-color: white;
+    box-shadow: 0 0 7px deepskyblue;
+    margin: 20px auto;
+    border-radius: 5px;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 130px;
+    border: none;
+    transition: all 0.4s;
+    color: #001529;
+    text-shadow: 0 0 4px #001529;
+  }
+  .add:hover,.delete:hover{
+    color:white;
+    background-color: #001529;
+  }
 	.table-menu{
-		width: 100%;
-		height: 80%;
-		background-color: #E3E3E3;
-		margin: 10px;
+		width: 44%;
+		height: 85%;
+		background-color: white;
+    float: right;
+		margin: 20px;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;
 		position: relative;
+    box-shadow: 0 0 7px deepskyblue;
+    border-radius: 5px;
+    margin-right: 40px;
 	}
 	.table-menu .el-icon-warning-outline{
 		position: absolute;
@@ -246,7 +216,7 @@
 		margin: 30px;
 		font-size: 20px;
 		font-weight: 800;
-		box-shadow: 0 0 20px #9274D0;
+		box-shadow: 0 0 10px #9274D0;
 	}
 	.table-menu li.using{
 		background-color: #001529;

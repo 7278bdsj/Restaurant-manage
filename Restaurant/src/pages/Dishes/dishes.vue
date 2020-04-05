@@ -2,14 +2,14 @@
 
 <template>
 	<div class="dishes">
-		<form class="submit-form animated rubberBand">
+		<form class="submit-form animated bounceInDown">
 			<h2>菜单管理</h2>
 			<input type="text" name="menuName" placeholder="菜名" v-model="inputDate.name">
 			<input type="text" name="type" placeholder="类型" v-model="inputDate.type">
 			<input type="text" name="price" placeholder="价格" v-model="inputDate.price">
 			<input type="text" name="num" placeholder="编号" v-model="inputDate.num">
 			<input type="submit" value="上传" class="button" @click.prevent="updata">
-			<input type="submit" value="下架" class="button" @click.prevent="downdata">
+			<input type="submit" value="下架" class="button2" @click.prevent="downdata">
 		</form>
 	</div>
 </template>
@@ -67,7 +67,7 @@
 						type:'error'
 					})
 				}
-			}	
+			}
 		}
 	}
 </script>
@@ -76,7 +76,7 @@
 	.dishes{
 		width: 100%;
 		height: 100%;
-		background:url(../Login/image/下载.jpg) no-repeat fixed;
+		background-color: #F0F2F5;
 		background-size: cover;
 		display: flex;
 		align-items: center;
@@ -89,18 +89,21 @@
 		border-radius: 10px;
 		display: flex;
 		flex-direction: column;
-		background:inherit;
+		background-color: white;
 		text-align: center;
 		padding: 40px;
 		overflow: hidden;
 		position: relative;
 		z-index: 100;
+    text-shadow: 0 0 3px #001529;
+    box-shadow: 0 0 5px deepskyblue;
 	}
 	.dishes .submit-form h2{
 		color: white;
 		font-size: 36px;
 	}
 	.dishes .submit-form input{
+    box-shadow: 0 0 5px deepskyblue;
 		margin: 6px 0px;
 		height: 40px;
 		border: none;
@@ -109,36 +112,18 @@
 		padding: 0 14px;
 		background-color: rgba(255,255,255,0.4);
 	}
-	.dishes .submit-form input::placeholder{
-		color: #2C3E50;
-	}
-	.dishes .submit-form input.file{
-		transform: translate(125px,0);
-		width: 200px;
-		height: 200px;
-		background-color: rgba(255,255,255,0.4);
-		opacity: 0;
-	}
-	.dishes .submit-form .fileStyle{
-		width: 250px;
-		height: 210px;
-		background-color: rgba(255,255,255,0.4);;
-		border-radius: 5px;
-		position: absolute;
-		top: 240px;
-		left: 160px;
-		color: rgba(105,105,105,0.5);
-		font-size: 120px;
-		line-height: 210px;
-		font-weight: lighter;
-	}
 	.dishes .submit-form .button{
-		background-image: linear-gradient(to bottom right,rgba(	0,0,205,0.3),rgba(139,0,139,0.5));
+		background-color: #409EFF;
 		color: white;
 		margin-top: 20px;
+    cursor: pointer;
+    text-shadow: 0 0 3px #001529;
 	}
-	.dishes .submit-form .button:hover{
-		background-image: linear-gradient(to bottom right,rgba(139,0,139,0.8),rgba(	255,255,0,0.5));
+	.dishes .submit-form .button2{
+		background-color: orangered;
+    color: white;
+    text-shadow: 0 0 3px #001529;
+    cursor: pointer;
 	}
 	.dishes .submit-form::after{
 		content:'';

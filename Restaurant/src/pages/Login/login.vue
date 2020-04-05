@@ -1,15 +1,5 @@
 <template>
   <div class="login">
-	  <div class="el-icon-arrow-left top-center animated bounceOutLeft infinite"></div>
-	  <div class="el-icon-arrow-left top-right animated bounceOutLeft infinite"></div>
-	  <div class="el-icon-arrow-left top-left animated bounceOutLeft infinite"></div>
-	  <div class="el-icon-arrow-left top-center-right animated bounceOutLeft infinite"></div>
-	  <div class="el-icon-arrow-left top-center-left animated bounceOutLeft infinite"></div>
-	  <div class="el-icon-arrow-right bottom-center animated bounceOutRight infinite"></div>
-	  <div class="el-icon-arrow-right bottom-right animated bounceOutRight infinite"></div>
-	  <div class="el-icon-arrow-right bottom-left animated bounceOutRight infinite"></div>
-	  <div class="el-icon-arrow-right bottom-center-right animated bounceOutRight infinite"></div>
-	  <div class="el-icon-arrow-right bottom-center-left animated bounceOutRight infinite"></div>
 		<form action="" class="animated bounceInDown login-form">
 			<h2 class="animated bounceInLeft">登录</h2>
 			<input type="text" name="username" placeholder="用户名" v-model="username" class="animated bounceInLeft">
@@ -61,11 +51,11 @@ export default {
 				   type:'error'
 			   })
 		   }
-		   
+
 	   }
-	   
+
    }
-   
+
 }
 </script>
 
@@ -81,64 +71,6 @@ export default {
 	justify-content center
 	font-family "agency fb"
 	position relative
-	.el-icon-arrow-left
-		width 100px
-		height 100px
-		color rgba(255,255,255,0.6)
-		text-align center
-		line-height 6.25rem
-		font-size 60px
-		font-weight 900
-		animation-duration 2s
-	.el-icon-arrow-right
-		width 100px
-		height 100px
-		color rgba(255,255,255,0.6)
-		text-align center
-		line-height 6.25rem
-		font-size 60px
-		font-weight 900
-		animation-duration 2s
-	.top-center
-		position absolute
-		right 50%
-		top 0
-	.top-right
-		position absolute
-		right 0
-		top 0
-	.top-left
-		position absolute
-		left 0
-		top 0
-	.top-center-left
-		position absolute
-		left 25%
-		top 0
-	.top-center-right
-		position absolute
-		right 25%
-		top 0
-	.bottom-center
-		position absolute
-		right 50%
-		bottom 0
-	.bottom-right
-		position absolute
-		right 0
-		bottom 0
-	.bottom-left
-		position absolute
-		left 0
-		bottom 0
-	.bottom-center-left
-		position absolute
-		left 25%
-		bottom 0
-	.bottom-center-right
-		position absolute
-		right 25%
-		bottom 0
 	.login-form
 		width 240px
 		height 220px

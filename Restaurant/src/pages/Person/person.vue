@@ -109,7 +109,7 @@
 		            worknum:'',
 		            work:'',
 		            entrytime:'',
-		            deptime:'null',			  
+		            deptime:'null',
 		            price:'',
 		            personal:'',
 					state:''
@@ -158,7 +158,7 @@
 					this.tableData=res.date;
 					console.log(res);
 				},
-				  
+
 		        async submitForm() {
 		          let values={
 					  name:this.personForm.name,
@@ -168,7 +168,7 @@
 					  worknum: this.personForm.worknum,
 					  work: this.personForm.work,
 					  entrytime: this.personForm.entrytime,
-					  deptime:this.personForm.deptime,			  
+					  deptime:this.personForm.deptime,
 					  price:this.personForm.price,
 					  personal:this.personForm.personal,
 					  state:this.personForm.state
@@ -188,7 +188,7 @@
 						  type:'error'
 					  })
 				  }
-				  
+
 		        },
 		        resetForm(formName) {
 		          this.$refs[formName].resetFields();
@@ -204,17 +204,18 @@
 	.person{
 		width: 100%;
 		height: 100%;
+    background-color: #F0F2F5;
 	}
 	.person-list{
 		width: 48%;
-		height: 97%;
-		background-color: #E3E3E3;
+		height: 620px;
+		background-color:white ;
 		margin: 10px;
 		float: left;
-		box-shadow: 0 0 20px #97A9C3;
+    box-shadow: 0 0 5px deepskyblue;
+    text-shadow: 0 0 1px #001529;
 	}
 	.person-list h2{
-		margin: 10px;
 		padding: 10px;
 		font-size: 25px;
 		color: #001529;
@@ -222,15 +223,16 @@
 	}
 	.person-operation{
 		width: 48%;
-		height: 97%;
-		background-color: #E3E3E3;
+		height: 620px;
+		background-color: white;
 		margin: 10px;
 		float: right;
 		position: relative;
-		
+    overflow: auto;
+    box-shadow: 0 0 5px deepskyblue;
+    text-shadow: 0 0 1px #001529;
 	}
 	.person-operation h2{
-		margin: 10px;
 		padding: 10px;
 		font-size: 25px;
 		color: #001529;

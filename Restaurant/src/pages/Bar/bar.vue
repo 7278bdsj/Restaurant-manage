@@ -272,6 +272,7 @@
 		padding: 20px;
 		box-sizing: border-box;
 		position: relative;
+    background-color: #F0F2F5;
 	}
 
 	#charts-bar {
@@ -282,6 +283,8 @@
 		height: 49%;
 		float: left;
 		box-shadow: 0 0 20px #2C3E50;
+    box-shadow: 0 0 5px deepskyblue;
+    overflow: hidden;
 	}
 
 	#charts-pie {
@@ -292,6 +295,8 @@
 		height: 49%;
 		float: right;
 		box-shadow: 0 0 20px #2C3E50;
+    box-shadow: 0 0 5px deepskyblue;
+    overflow: hidden;
 	}
 
 	#charts-line {
@@ -304,5 +309,7 @@
 		box-shadow: 0 0 20px #2C3E50;
 		position: absolute;
 		bottom: 0;
+    box-shadow: 0 0 5px deepskyblue;
+    overflow: hidden;
 	}
 </style>
